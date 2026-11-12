@@ -1,0 +1,98 @@
+ *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #01234E;
+}
+body{
+    background-image: url(../imagens/fundo_login1.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+
+}
+.login-container{
+    background: #FAFAFB;
+    width:600px;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.1);
+}
+.logo{
+    text-align:center;
+    margin-bottom:20px;
+}
+.logo img{
+    width: 350px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+.input-group{
+    margin-bottom:20px;
+}
+.input-group label{
+    display: block;
+    text-align: center;
+    font-weight:bold;
+    margin-bottom: 8px;
+}
+.input-group input{
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 15px;
+}
+#forgot-password{
+    display:block;
+    text-align:right;
+    margin-bottom:20px;
+    text-decoration:none;
+    color:#011530;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    background:#01234E;
+    color:white;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight: bolder;
+}
+
+.tipo-usuario{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.perfil{
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #01234E;
+    background: white;
+    color: #01234E;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.perfil.ativo{
+    background: #01234E;
+    color: white;
+}
+
+.perfil:hover{
+    opacity: 0.9;
+}

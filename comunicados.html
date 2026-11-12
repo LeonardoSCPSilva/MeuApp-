@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunicados - Morador</title>
+    <link rel="stylesheet" href="estilos/base.css">
+    <link rel="stylesheet" href="estilos/paginas.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <aside class="sidebar"></aside>
+
+        <main class="content">
+            <h1>Comunicados</h1>
+
+            <section class="cards">
+
+
+                <div class="card">
+                    <h2>3</h2>
+                    <p>Lidos</p>
+                </div>
+
+                <div class="card">
+                    <h2>0</h2>
+                    <p>Não lidos</p>
+                </div>
+
+            </section>
+
+            <section class="feed">
+
+                <div class="comunicado">
+                    <h3>De:</h3> <p>Síndico</p> 
+                    <h3>Assunto:</h3> <p>Reunião de condomínio - Dezembro</p> 
+                    <div class="acoes">
+                        <button class="abrir" onclick="abriComunicado(1)">abrir</button>
+                    </div>
+                    <div class="mensagem" id="comunicado1" style="display: none;" >
+                    <p>Reunião de condomínio do mês de Dezembro terá que ser adiada para o dia 10/01/2027</p> 
+                    </div>
+                </div>
+                <div class="comunicado">
+                    <h3>De:</h3> <p>Síndico</p> 
+                    <h3>Assunto:</h3> <p>Reunião de condomínio - Dezembro</p> 
+                    <div class="acoes">
+                        <button class="abrir" onclick="abriComunicado(2)">abrir</button>
+                    </div>
+                    <div class="mensagem" id="comunicado2" style="display: none;" >
+                        <p>Reunião de condomínio do mês de Dezembro terá que ser adiada para o dia 10/01/2027</p> 
+                    </div>
+                </div>
+                <div class="comunicado">
+                    <h3>De:</h3> <p>Síndico</p> 
+                    <h3>Assunto:</h3> <p>Reunião de condomínio - Dezembro</p> 
+                    <div class="acoes">
+                        <button class="abrir" onclick="abriComunicado(3)">abrir</button>
+                    </div>
+                    <div class="mensagem" id="comunicado3" style="display: none;" >
+                    <p>Reunião de condomínio do mês de Dezembro terá que ser adiada para o dia 10/01/2027</p> 
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+    <script src="JavaScript/base.js"></script>        
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunicados - Morador</title>
+    <link rel="stylesheet" href="estilos/base.css">
+    <link rel="stylesheet" href="estilos/paginas.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <aside class="sidebar"></aside>
+
+        <main class="content">
+            <h1>Comunicados</h1>
+
+            <section class="cards">
+
+
+                <div class="card">
+                    <h2>0</h2>
+                    <p>Respondidas</p>
+                </div>
+
+                <div class="card">
+                    <h2>1</h2>
+                    <p>Pendentes</p>
+                </div>
+
+            </section>
+
+            <section class="feed">
+
+                <div class="comunicado">
+                    <h3>Assunto:</h3> <p>Melhorias para o condomínio</p> 
+                    <div class="acoes">
+                        <button class="abrir" onclick="abriComunicado(1)">abrir</button>
+                    </div>
+                    <div class="mensagem" id="comunicado1" style="display: none;" >
+                        <form id="formEnquete">
+
+                            <!-- Pergunta 1 -->
+                            <div class="pergunta">
+                                <h4>1. Quais áreas comuns você utiliza com frequência?</h4>
+                                <div class="opcoes">
+                                    <label>
+                                    <input type="checkbox" name="area" value="Piscina">
+                                        Piscina
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="area" value="Quadra">
+                                        Quadra
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="area" value="Salão de Festas">
+                                        Salão de Festas
+                                    </label>
+
+                                    <label>
+                                        <input type="checkbox" name="area" value="Espaço Gourmet">
+                                        Espaço Gourmet
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Pergunta 2 -->
+                            <div class="pergunta">
+                                <h4>2. Quais melhorias você gostaria de ver no condomínio?</h4>
+                                <div class="opcoes">
+                                    <label>
+                                    <input type="checkbox" name="melhoria" value="Academia">
+                                    Academia
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" name="melhoria" value="Playground">
+                                    Playground
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" name="melhoria" value="Câmeras">
+                                    Mais câmeras
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" name="melhoria" value="Jardins">
+                                    Jardins
+                                </label>
+                                </div>
+                                
+                            </div>
+
+                            <!-- Pergunta 3 -->
+                            <div class="pergunta">
+                                <h4>3. Você está satisfeito com a administração do condomínio?</h4>
+
+                                <div class="opcoes">
+                                    <label>
+                                    <input type="radio" name="satisfacao" value="Sim" required>
+                                        Sim
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" name="satisfacao" value="Parcialmente">
+                                        Parcialmente
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" name="satisfacao" value="Não">
+                                        Não
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Comentário -->
+                            <div class="pergunta">
+                                <h4>Comentários ou sugestões:</h4>
+
+                                <textarea
+                                    name="comentario"
+                                    cols="150"
+                                    rows="5"
+                                    placeholder="Digite aqui sua sugestão..."
+                                ></textarea>
+                            </div>
+
+                            <button type="submit">
+                                Votar
+                            </button>
+
+                        </form>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+    <script src="JavaScript/base.js"></script>        
+</body>
+</html>

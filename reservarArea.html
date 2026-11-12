@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Morador</title>
+    <link rel="stylesheet" href="estilos/base.css">
+    <link rel="stylesheet" href="estilos/paginas.css">
+</head>
+
+<body>
+    
+
+    <div class="container">
+
+        <aside class="sidebar"></aside>
+
+
+        <main class="content">
+
+            <div class="cabecalho-area">
+
+                <img id="fotoArea" alt="Área comum">
+
+                <div class="info-area">
+                    <h1 id="tituloArea"></h1>
+                    <p id="infoArea"></p>
+                </div>
+
+            </div>
+            <form class="form-reserva">
+                
+                <label for="dataReserva">Data</label>
+                <input type="date" id="dataReserva">
+
+                <label for="horaInicio">Horário Inicial</label>
+                <select id="horaInicio"></select>
+
+                <label for="horaFim">Horário Final</label>
+                <select id="horaFim"></select>
+
+                <button type="submit" id="btnReservar">
+                    Confirmar Reserva
+                </button>
+
+            </form>
+
+        </main>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+
+            <h2 id="tituloModal"></h2>
+
+            <div id="conteudoModal"></div>
+        </div>
+    </div>
+
+    <script src="JavaScript/base.js"></script>  
+    <script src="JavaScript/reservar.js"></script>  
+</body>
+</html>

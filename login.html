@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeuAppê - Login</title>
+    <link rel="stylesheet" href="estilos/login.css">
+</head>
+<body>
+
+    <div class="login-container">
+
+        <div class="logo">
+            <img src="imagens/Logo_minimalista_meuAppe.png" alt="logo Minimalista do MeuAppê">
+        </div>
+
+        <h2>Seja bem-vindo</h2>
+
+        <form name="frm_login" action="DashboardMorador.html">
+            <div class="tipo-usuario">
+                <button type="button" class="perfil ativo" data-perfil="morador">
+                    Morador
+                </button>
+
+                <button type="button" class="perfil" data-perfil="funcionario">
+                    Funcionário / Síndico
+                </button>
+            </div>
+
+            <input type="hidden" id="perfilSelecionado" value="morador">            
+            <div class="input-group">
+                <label>CPF ou E-mail</label>
+                <input type="text" placeholder="Digite seu CPF ou e-mail">
+            </div>
+
+            <div class="input-group">
+                <label>Senha</label>
+                <input type="password" placeholder="Digite sua senha">
+            </div>
+
+            <a href="#" id="forgot-password">
+                Esqueceu sua senha?
+            </a>
+
+            <button type="submit" >
+                Entrar
+            </button>
+
+        </form>
+
+    </div>
+    <script src="JavaScript/login.js"></script>
+</body>
+</html>
