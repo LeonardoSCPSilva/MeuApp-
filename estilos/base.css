@@ -18,7 +18,7 @@ body{
     background-attachment: fixed;
     min-height:100vh;
 }
-
+/*Menu*/
 .sidebar{
     width:220px;
     background:#ececfca6;
@@ -29,6 +29,7 @@ body{
     flex-direction:column;
     min-height:100vh;
 }
+
 
 .logo{
     text-align:center;

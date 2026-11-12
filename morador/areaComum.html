@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Morador</title>
+    <link rel="stylesheet" href="../estilos/base.css">
+    <link rel="stylesheet" href="../estilos/paginas.css">
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <aside class="sidebar"></aside>
+
+        <main class="content">
+            <h1>Áreas Comuns</h1>
+            <div class="acoes">
+                <button class="minhasReservas" onclick="troca('reservas')"> Minhas Reservas </button>
+                <button class="novaReserva" onclick="troca('reservar')" style="margin-left: 30px;"> Espaços para reserva </button>
+                
+            </div>
+            
+
+            <div id="Reservar">
+                <section class="cardsA">
+
+                <div class="cardA">
+                    <img src="../imagens/piscina.jpg" alt="">
+                    <p>Piscina</p>
+                    <div class="acoes">
+                        <button class="reserva-btn" onclick="abrirReserva('Piscina')">Reservar</button>
+                        <button class="regra-btn" data-local="Piscina">Regras</button>
+                        <button class="dispo-btn">Disponibilidade</button>
+                    </div>
+                </div>
+                <div class="cardA">
+                    <img src="../imagens/quadra.jpg" alt="">
+                    <p>Quadra</p>
+                    <div class="acoes">
+                        <button class="reserva-btn" onclick="abrirReserva('Quadra')">Reservar</button>
+                        <button class="regra-btn" data-local="Quadra">Regras</button>
+                        <button class="dispo-btn">Disponibilidade</button>
+                    </div>
+                </div>
+            </section>
+            <section class="cardsA">
+                <div class="cardA">
+                    <img src="../imagens/espacoGourmet.jpg" alt="">
+                    <p>Espaço Gourmet</p>
+                    <div class="acoes">
+                        <button class="reserva-btn" onclick="abrirReserva('EspacoGourmet')">Reservar</button>
+                        <button class="regra-btn" data-local="EspacoGourmet">Regras</button>
+                        <button class="dispo-btn">Disponibilidade</button>
+                    </div>
+                </div>
+                <div class="cardA">
+                    <img src="../imagens/salaoFesta.jpg" alt="">
+                    <p>Salão de festas</p>
+                    <div class="acoes">
+                        <button class="reserva-btn" onclick="abrirReserva('SalaoFesta')">Reservar</button>
+                        <button class="regra-btn" data-local="SalaoFesta">Regras</button>
+                        <button class="dispo-btn">Disponibilidade</button>
+                    </div>
+                </div>
+            </section>
+            </div>
+            <div id="Reservas">
+                <section class="feed" id="lista-reservas"></section>
+            </div>
+        </main>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+
+            <h2 id="tituloModal"></h2>
+
+            <div id="conteudoModal"></div>
+        </div>
+    </div>
+    <script src="../JavaScript/base.js"></script>   
+</body>
+</html>

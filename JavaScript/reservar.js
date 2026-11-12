@@ -71,7 +71,7 @@ document.getElementById("infoArea").textContent =
 `Funcionamento: ${areas[area].horarioInicial}:00 às ${areas[area].horarioFinal}:00`;
 
 document.getElementById("fotoArea").src =
-    `imagens/${area}.jpg`;
+    `../imagens/${area}.jpg`;
 // calendario começar a partir do dia de hoje
 const hoje = new Date().toISOString().split("T")[0];
 

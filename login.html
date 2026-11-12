@@ -16,7 +16,7 @@
 
         <h2>Seja bem-vindo</h2>
 
-        <form name="frm_login" action="DashboardMorador.html">
+        <form name="frm_login">
             <div class="tipo-usuario">
                 <button type="button" class="perfil ativo" data-perfil="morador">
                     Morador
@@ -30,12 +30,12 @@
             <input type="hidden" id="perfilSelecionado" value="morador">            
             <div class="input-group">
                 <label>CPF ou E-mail</label>
-                <input type="text" placeholder="Digite seu CPF ou e-mail">
+                <input type="text" placeholder="Digite seu CPF ou e-mail" id="usuario">
             </div>
 
             <div class="input-group">
                 <label>Senha</label>
-                <input type="password" placeholder="Digite sua senha">
+                <input type="password" placeholder="Digite sua senha" id="senha">
             </div>
 
             <a href="#" id="forgot-password">
@@ -48,6 +48,15 @@
 
         </form>
 
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+
+            <h2 id="tituloModal"></h2>
+
+            <div id="conteudoModal"></div>
+        </div>
     </div>
     <script src="JavaScript/login.js"></script>
 </body>

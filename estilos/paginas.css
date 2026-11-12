@@ -285,3 +285,42 @@ opacity: .9;
     flex-wrap: wrap;
     justify-content: center;
 }
+
+/*perfil*/
+.perfil{
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.cardPerfil{
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+.cardPerfil img{
+    width: 120px;
+    height: 120px;
+    border-radius: 30%;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+}
+
+.cardPerfil h2{
+    margin: 15px 0;
+    color: #08214e;
+}
+
+#editarPerfil{
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 10px;
+    background: #08214e;
+    color: white;
+    cursor: pointer;
+}
