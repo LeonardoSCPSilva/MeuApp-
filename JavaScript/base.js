@@ -22,7 +22,7 @@ menuFuncionario = `<div class="logo">
             <nav>
                 <a href="DashboardMorador.html">Dashboard</a>
                 <a href="Comunicados.html">Comunicados</a>
-                <a href="areaComum.html">Reservas</a>
+                <a href="areaComum.html">Áreas Comuns</a>
                 <a href="boletos.html">Boletos</a>
                 <a href="enquentes.html">Enquetes</a>
                 <a href="perfil.html">Perfil</a>
@@ -37,84 +37,8 @@ if (perfil === "morador") {
 if (perfil === "funcionario") {
     menu.innerHTML = menuFuncionario;
 }
-//Trocar entre reservar e minhas reservas
-    function troca(tipo){
-        const Reservar = document.querySelector(".novaReserva");
-        const Reservas = document.querySelector(".minhasReservas");
 
-        const ativaReservar = document.getElementById("Reservar");
-        const ativaReservas = document.getElementById("Reservas");
-        
-        if (tipo === "reservar") {
-            ativaReservar.style.display = "block";
-            ativaReservas.style.display = "none";
-            Reservas.style.backgroundColor = "#FAFAFB";
-            Reservas.style.color = "#01234E";
-            Reservar.style.backgroundColor = "#6b7280";
-            Reservar.style.color = "white";
-            
-        }
 
-        if (tipo === "reservas") {
-            ativaReservar.style.display = "none";
-            ativaReservas.style.display = "block";
-            Reservar.style.backgroundColor = "#FAFAFB";
-            Reservar.style.color = "#01234E";
-            Reservas.style.backgroundColor = "#6b7280";
-            Reservas.style.color = "white";
-        }  
-    }
-
-//Areas comum
-const areas = {
-        Piscina: {
-            titulo: "Regras da Piscina",
-            conteudo: `
-                <p> Funcionamento: 08h às 22h</p>
-                <p> Proibido utilizar recipientes de vidro.</p>
-                <p> Crianças devem estar acompanhadas por um responsável.</p>
-            `,
-            nome: "Piscina",
-            horarioInicial: "08",
-            horarioFinal: "20"
-        },
-
-        Quadra: {
-            titulo: "Regras da Quadra",
-            conteudo: `
-                <p> Uso somente mediante reserva.</p>
-                <p> Limite máximo de 10 pessoas por horário.</p>
-                <p> Não é permitido consumir alimentos na área de jogo.</p>
-            `,
-            nome: "Quadra",
-            horarioInicial: "08",
-            horarioFinal: "22"
-        },
-
-        SalaoFesta: {
-            titulo: "Regras do Salão",
-            conteudo: `
-                <p> Reserva deve ser realizada antecipadamente.</p>
-                <p> O salão deve ser entregue limpo após o uso.</p>
-                <p> Limite máximo de 50 convidados.</p>
-            `,
-            nome: "Salão de Festas",
-            horarioInicial: "10",
-            horarioFinal: "23"
-        },
-
-        EspacoGourmet: {
-            titulo: "Regras do Espaço Gourmet",
-            conteudo: `
-                <p> Reserva deve ser realizada antecipadamente.</p>
-                <p> O espaço deve ser entregue limpo após o uso.</p>
-                <p> Limite máximo de 20 convidados.</p>
-            `,
-            nome: "Espaço Gourmet",
-            horarioInicial: "08",
-            horarioFinal: "22"
-        }
-    };    
 
 //Abrir modal com regras
     const botoes = document.querySelectorAll(".regra-btn");

@@ -1,3 +1,72 @@
+//Trocar entre reservar e minhas reservas
+    function troca(tipo){
+        const Reservar = document.querySelector(".novaReserva");
+        const Reservas = document.querySelector(".minhasReservas");
+
+        const ativaReservar = document.getElementById("Reservar");
+        const ativaReservas = document.getElementById("Reservas");
+        
+        if (tipo === "reservar") {
+            ativaReservar.style.display = "block";
+            ativaReservas.style.display = "none";
+            Reservas.style.backgroundColor = "#FAFAFB";
+            Reservas.style.color = "#01234E";
+            Reservar.style.backgroundColor = "#6b7280";
+            Reservar.style.color = "white";
+            
+        }
+
+        if (tipo === "reservas") {
+            ativaReservar.style.display = "none";
+            ativaReservas.style.display = "block";
+            Reservar.style.backgroundColor = "#FAFAFB";
+            Reservar.style.color = "#01234E";
+            Reservas.style.backgroundColor = "#6b7280";
+            Reservas.style.color = "white";
+        }  
+    }
+
+const form = document.querySelector(".form-reserva")
+form.addEventListener("submit", cadastrarReserva);
+
+// abrir de acordo com area
+if (areas[area]) {
+
+    document.getElementById("tituloArea").textContent =
+        `Reserva - ${areas[area].nome}`;
+
+}
+document.getElementById("infoArea").textContent =
+`Funcionamento: ${areas[area].horarioInicial}:00 às ${areas[area].horarioFinal}:00`;
+
+document.getElementById("fotoArea").src =
+    `../imagens/${area}.jpg`;
+// calendario começar a partir do dia de hoje
+const hoje = new Date().toISOString().split("T")[0];
+
+document.getElementById("dataReserva").min = hoje;
+
+// criar os horarios do formulario de acordo com horario de funcionamneto
+const horaInicio = document.getElementById("horaInicio");
+const horaFim = document.getElementById("horaFim");
+
+for(let hora = areas[area].horarioInicial; hora <= areas[area].horarioFinal; hora++){
+
+    const horario = `${hora.toString().padStart(2,'0')}:00`;
+
+    horaInicio.innerHTML += `
+        <option value="${horario}">
+            ${horario}
+        </option>
+    `;
+
+    horaFim.innerHTML += `
+        <option value="${horario}">
+            ${horario}
+        </option>
+    `;
+}
+
 const parametro = new URLSearchParams(window.location.search);
 const areaSelecionada = parametro.get("area");
 const nomeArea = areas[areaSelecionada].nome;
@@ -57,43 +126,5 @@ function cadastrarReserva(event){
     
 }
 
-const form = document.querySelector(".form-reserva")
-form.addEventListener("submit", cadastrarReserva);
 
-// abrir de acordo com area
-if (areas[area]) {
 
-    document.getElementById("tituloArea").textContent =
-        `Reserva - ${areas[area].nome}`;
-
-}
-document.getElementById("infoArea").textContent =
-`Funcionamento: ${areas[area].horarioInicial}:00 às ${areas[area].horarioFinal}:00`;
-
-document.getElementById("fotoArea").src =
-    `../imagens/${area}.jpg`;
-// calendario começar a partir do dia de hoje
-const hoje = new Date().toISOString().split("T")[0];
-
-document.getElementById("dataReserva").min = hoje;
-
-// criar os horarios do formulario de acordo com horario de funcionamneto
-const horaInicio = document.getElementById("horaInicio");
-const horaFim = document.getElementById("horaFim");
-
-for(let hora = areas[area].horarioInicial; hora <= areas[area].horarioFinal; hora++){
-
-    const horario = `${hora.toString().padStart(2,'0')}:00`;
-
-    horaInicio.innerHTML += `
-        <option value="${horario}">
-            ${horario}
-        </option>
-    `;
-
-    horaFim.innerHTML += `
-        <option value="${horario}">
-            ${horario}
-        </option>
-    `;
-}
