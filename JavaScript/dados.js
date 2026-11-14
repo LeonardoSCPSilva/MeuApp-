@@ -48,3 +48,13 @@ const areas = {
             horarioFinal: "22"
         }
     };    
+
+    const moradores = JSON.parse(localStorage.getItem("moradores")) || [
+    {
+        id: 1,
+        nome: "teste",
+        apartamento: "101",
+        telefone: "(11) 99999-1111"
+    },
+
+];

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunicados - Morador</title>
+    <link rel="stylesheet" href="../estilos/base.css">
+    <link rel="stylesheet" href="../estilos/paginasFuncionario.css">
+</head>
+
+<body>
+
+    <div class=" container">
+
+        <aside class="sidebar"></aside>
+
+        <main class="content">
+
+            <h1>Gestão de Moradores</h1>
+
+            <section class="cards">
+
+                <div class="card">
+                    <h2 id="totalMoradores">0</h2>
+                    <p>Moradores Cadastrados</p>
+                </div>
+
+                <div class="card">
+                    <h2 id="ativos">0</h2>
+                    <p>Moradores Ativos</p>
+                </div>
+
+            </section>
+
+            <section class="feed">
+
+                <section class="filtros">
+
+                    <div class="busca">
+                        <input type="text" id="buscarMorador" placeholder="Buscar morador..."
+                            onkeyup="buscarMoradores()">
+                    </div>
+
+                    <button class="btnCadastrar" onclick="window.location.href='cadastroMorador.html'">
+                     Cadastrar Morador
+                    </button>
+
+                </section>
+
+                <div id="listaMoradores"></div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script src="../JavaScript/menuF.js"></script>
+    <script src="../JavaScript/dados.js"></script>
+    <script src="../JavaScript/moradores.js"></script>
+
+</body>
+
+</html>

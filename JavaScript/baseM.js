@@ -15,21 +15,6 @@ menuMorador = `<div class="logo">
                 
             </nav>
             <a href="../login.html" id="sair"><img src="../imagens/sair.png" alt=""><h5>Sair</h5></a>`;
-menuFuncionario = `<div class="logo">
-                <img src="../imagens/Logo_minimalista_meuAppe.png" alt="logo Minimalista do MeuAppê">
-            </div>
-
-            <nav>
-                <a href="DashboardFuncionario.html">Dashboard</a>
-                <a href="Comunicados.html">Comunicados</a>
-                <a href="areaComum.html">Áreas Comuns</a>
-                <a href="boletos.html">Boletos</a>
-                <a href="enquentes.html">Enquetes</a>
-                <a href="perfil.html">Perfil</a>
-                
-            </nav>
-            <a href="../login.html" id="sair"><img src="../imagens/sair.png" alt=""><h5>Sair</h5></a>`;
-
 if (perfil === "morador") {
     menu.innerHTML = menuMorador;
 }

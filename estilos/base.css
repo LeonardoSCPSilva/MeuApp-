@@ -53,8 +53,10 @@ nav a{
 }
 
 nav a:hover{
-    background:#6b7280;
+    background:#758dbb;
     color:white;
+    transform: translateY(-2px);
+
 }
 #sair{
     display: flex;
@@ -90,6 +92,7 @@ nav a:hover{
     display:flex;
     gap:20px;
     margin-bottom:40px;
+    flex-wrap: wrap;
 }
 
 .card{

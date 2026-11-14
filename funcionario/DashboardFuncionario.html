@@ -1,44 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Morador</title>
+    <title>Dashboard - Síndico</title>
     <link rel="stylesheet" href="../estilos/base.css">
+    <link rel="stylesheet" href="../estilos/paginasFuncionario.css">
 </head>
+
 <body>
+
     <div class="container">
 
         <aside class="sidebar"></aside>
 
         <main class="content">
 
-            <h1>Dashboard do Sindico</h1>
+            <h1>Dashboard do Síndico</h1>
 
             <section class="cards">
 
                 <div class="card">
-                    <h2>3</h2>
-                    <p>Comunicados</p>
+                    <h2 id="qtdMoradores">0</h2>
+                    <p>Moradores Cadastrados</p>
                 </div>
 
                 <div class="card">
-                    <h2>1</h2>
-                    <p>Reserva</p>
+                    <h2 id="qtdFuncionarios">0</h2>
+                    <p>Funcionários</p>
                 </div>
 
                 <div class="card">
-                    <h2>2</h2>
+                    <h2 id="qtdReservas">0</h2>
+                    <p>Reservas</p>
+                </div>
+
+                <div class="card">
+                    <h2 id="qtdEncomendas">0</h2>
                     <p>Encomendas</p>
                 </div>
 
                 <div class="card">
-                    <h2>1</h2>
-                    <p>Boleto</p>
-                </div>
-
-                <div class="card">
-                    <h2>4</h2>
+                    <h2 id="qtdEnquetes">0</h2>
                     <p>Enquetes</p>
                 </div>
 
@@ -47,25 +51,36 @@
             <section class="feed">
 
                 <div class="item">
-                    <h3>📢 Assembleia Geral</h3>
-                    <p>Dia 20/11 às 19h.</p>
+                    <h3>🔧 Manutenção</h3>
+                    <p>Elevador Bloco A aguardando orçamento.</p>
                 </div>
 
                 <div class="item">
-                    <h3>📦 Nova Encomenda</h3>
-                    <p>Retirar na portaria.</p>
+                    <h3>📢 Comunicado</h3>
+                    <p>Assembleia Geral marcada para 20/11 às 19h.</p>
                 </div>
 
                 <div class="item">
-                    <h3>📅 Próxima Reserva</h3>
-                    <p>Salão de Festas - 12/11.</p>
+                    <h3>🏊 Reserva</h3>
+                    <p>Área Piscina reservada para 15/11 das 14h às 18h.</p>
+                </div>
+
+                <div class="item">
+                    <h3>📦 Encomendas</h3>
+                    <p>5 encomendas aguardando retirada.</p>
                 </div>
 
             </section>
 
         </main>
 
-    </div>  
-    <script src="../JavaScript/base.js"></script>    
+    </div>
+
+    <script src="../JavaScript/menuF.js"></script>
+    <script src="../JavaScript/dados.js"></script>
+    <script src="../JavaScript/dashboardF.js"></script>
+    
+
 </body>
+
 </html>
