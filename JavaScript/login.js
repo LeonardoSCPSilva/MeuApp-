@@ -35,7 +35,7 @@ forma.addEventListener("submit", (event) => {
 
         modal.style.display = "flex";
     } else {
-        if (usuario == "teste@teste.com" || senha == "teste123") {
+        if (usuario == "teste@teste.com" && senha == "teste123") {
             const perfil = perfilSelecionado.value;
 
             if (perfil === "morador") {

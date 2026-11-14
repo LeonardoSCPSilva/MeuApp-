@@ -20,7 +20,7 @@ menuFuncionario = `<div class="logo">
             </div>
 
             <nav>
-                <a href="DashboardMorador.html">Dashboard</a>
+                <a href="DashboardFuncionario.html">Dashboard</a>
                 <a href="Comunicados.html">Comunicados</a>
                 <a href="areaComum.html">Áreas Comuns</a>
                 <a href="boletos.html">Boletos</a>
@@ -37,8 +37,6 @@ if (perfil === "morador") {
 if (perfil === "funcionario") {
     menu.innerHTML = menuFuncionario;
 }
-
-
 
 //Abrir modal com regras
     const botoes = document.querySelectorAll(".regra-btn");
@@ -73,11 +71,7 @@ if (perfil === "funcionario") {
         }
     });
 
-//Ao clicar no botão reservar abrir a pagina reservar.html
 
-function abrirReserva (area) {
-    window.location.href = `reservarArea.html?area=${area}`;
-}
 
 //reserva da area comum
 const params = new URLSearchParams(window.location.search);
@@ -96,46 +90,4 @@ function abriComunicado(id){
     }
 
 }
-
-//mostrando as reservas na tela
-
-const listasReservas = document.getElementById('lista-reservas');
-const reservas =
-    JSON.parse(localStorage.getItem("reservas")) || [];
-if(reservas.length === 0){
-    listasReservas.innerHTML = `
-        <div class="itemB">
-            <p>Não há nenhuma reserva</p>
-        </div>
-    `;
-} else {
-    let cards = "";
-    console.log("Reservas:", reservas);
-    reservas.forEach(reservas => {
-
-        cards += `
-            <div class="itemB">
-                <h3>${reservas.area}</h3>
-
-                <p>Data - ${reservas.data}</p>
-
-                <p>Horário Inicio - ${reservas.horaInicio}</p>
-                <p>Horário Final - ${reservas.horaFim}</p>
-                <div class="acoes">
-                    <button class="editar">
-                        Editar
-                    </button>
-
-                    <button class="cancelar">
-                        Cancelar
-                    </button>
-                </div>
-            </div>
-        `;
-
-    });
-
-    listasReservas.innerHTML = cards;
-}
-
 

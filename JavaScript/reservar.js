@@ -1,31 +1,3 @@
-//Trocar entre reservar e minhas reservas
-    function troca(tipo){
-        const Reservar = document.querySelector(".novaReserva");
-        const Reservas = document.querySelector(".minhasReservas");
-
-        const ativaReservar = document.getElementById("Reservar");
-        const ativaReservas = document.getElementById("Reservas");
-        
-        if (tipo === "reservar") {
-            ativaReservar.style.display = "block";
-            ativaReservas.style.display = "none";
-            Reservas.style.backgroundColor = "#FAFAFB";
-            Reservas.style.color = "#01234E";
-            Reservar.style.backgroundColor = "#6b7280";
-            Reservar.style.color = "white";
-            
-        }
-
-        if (tipo === "reservas") {
-            ativaReservar.style.display = "none";
-            ativaReservas.style.display = "block";
-            Reservar.style.backgroundColor = "#FAFAFB";
-            Reservar.style.color = "#01234E";
-            Reservas.style.backgroundColor = "#6b7280";
-            Reservas.style.color = "white";
-        }  
-    }
-
 const form = document.querySelector(".form-reserva")
 form.addEventListener("submit", cadastrarReserva);
 
@@ -37,75 +9,72 @@ if (areas[area]) {
 
 }
 document.getElementById("infoArea").textContent =
-`Funcionamento: ${areas[area].horarioInicial}:00 às ${areas[area].horarioFinal}:00`;
+    `Funcionamento: ${areas[area].horarioInicial}:00 às ${areas[area].horarioFinal}:00`;
 
 document.getElementById("fotoArea").src =
     `../imagens/${area}.jpg`;
 // calendario começar a partir do dia de hoje
 const hoje = new Date().toISOString().split("T")[0];
 
+// bloqueia as datas menores que dia atual
 document.getElementById("dataReserva").min = hoje;
 
 // criar os horarios do formulario de acordo com horario de funcionamneto
-const horaInicio = document.getElementById("horaInicio");
-const horaFim = document.getElementById("horaFim");
+const select = document.getElementById("faixaHorario");
 
-for(let hora = areas[area].horarioInicial; hora <= areas[area].horarioFinal; hora++){
+for (
+    let hora = parseInt(areas[area].horarioInicial);
+    hora < parseInt(areas[area].horarioFinal);
+    hora++
+) {
+    const inicio = `${hora.toString().padStart(2, "0")}:00`;
+    const fim = `${(hora + 1).toString().padStart(2, "0")}:00`;
 
-    const horario = `${hora.toString().padStart(2,'0')}:00`;
-
-    horaInicio.innerHTML += `
-        <option value="${horario}">
-            ${horario}
-        </option>
-    `;
-
-    horaFim.innerHTML += `
-        <option value="${horario}">
-            ${horario}
+    select.innerHTML += `
+        <option value="${inicio}-${fim}">
+            ${inicio} às ${fim}
         </option>
     `;
 }
 
+// salva na memoria do navegador
 const parametro = new URLSearchParams(window.location.search);
 const areaSelecionada = parametro.get("area");
 const nomeArea = areas[areaSelecionada].nome;
 
-function cadastrarReserva(event){
-    
+function cadastrarReserva(event) {
+
     event.preventDefault();
 
     const area = nomeArea;
     const data = document.getElementById("dataReserva").value;
-    const horaInicio = document.getElementById("horaInicio").value;
-    const horaFim = document.getElementById("horaFim").value;
+    const horarioMarcado = document.getElementById("faixaHorario").value;
 
-    if(horaInicio>=horaFim){
-        alert("Horário Final menor que inicial")
-    } 
-    else
-    {
+
+    if (data == "") {
+        alert("Escolha uma data!");
+
+        return;
+    } else {
         const novaReservaa = {
             id: Date.now(),
             area,
             data,
-            horaInicio,
-            horaFim
+            horarioMarcado
         };
 
         let reservas =
             JSON.parse(localStorage.getItem("reservas")) || [];
-            
+
         const existe = reservas.some(item =>
 
             item.area === novaReservaa.area &&
             item.data === novaReservaa.data &&
-            item.horaFim === novaReservaa.horaFim &&
-            item.horaInicio === novaReservaa.horaInicio
+            item.horarioMarcado === novaReservaa.horarioMarcado
 
         );
 
-        if(existe){
+        if (existe) {
 
             alert("Horário já reservado!");
 
@@ -123,8 +92,6 @@ function cadastrarReserva(event){
         window.location.href = "AreaComum.html"
     }
 
-    
 }
-
 
 
