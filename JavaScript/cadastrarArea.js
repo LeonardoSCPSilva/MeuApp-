@@ -50,7 +50,7 @@ formCadastroArea.addEventListener("submit", (event) => {
         const horarioInicial = Number(dadosFormulario.get("horarioInicial"));
         const horarioFinal = Number(dadosFormulario.get("horarioFinal"));
         const nome = dadosFormulario.get("nome").trim();
-        const regras = dadosFormulario.get("conteudo").trim();
+        const regras = dadosFormulario.get("regras").trim();
 
         if (!nome || !regras) {
             mensagemCadastroArea.textContent = "Preencha o nome e as regras da área.";
@@ -74,7 +74,7 @@ formCadastroArea.addEventListener("submit", (event) => {
         const novaArea = {
             id: maiorId + 1,
             nome: escapeHtml(nome),
-            conteudo: `<p>${escapeHtml(regras).replace(/\r?\n/g, "<br>")}</p>`,
+            regras: `<p>${escapeHtml(regras).replace(/\r?\n/g, "<br>")}</p>`,
             horarioInicial: String(horarioInicial).padStart(2, "0"),
             horarioFinal: String(horarioFinal).padStart(2, "0"),
             imagem: leitor.result

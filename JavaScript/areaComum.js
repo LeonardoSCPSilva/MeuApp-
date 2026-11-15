@@ -119,7 +119,7 @@ if(areasDisponiveis.length === 0){
                 <p>${area.nome}</p>
                 <div class="acoes">
                     <button class="reserva-btn" onclick="abrirReserva('${area.id}')">Reservar</button>
-                    <button class="regra-btn" data-local="${area.id}">Regras</button>
+                    <button class="regra-btn" onclick="abrirModalRegras('${area.id}')">Regras</button>
                     <button class="dispo-btn">Disponibilidade</button>
                 </div>
             </div>

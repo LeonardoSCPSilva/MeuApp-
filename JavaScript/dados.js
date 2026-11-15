@@ -2,8 +2,7 @@
 const areasPadrão = [
     {
         id: 1,
-        titulo: "Regras da Piscina",
-        conteudo: `
+        regras: `
                 <p> Funcionamento: 08h às 22h</p>
                 <p> Proibido utilizar recipientes de vidro.</p>
                 <p> Crianças devem estar acompanhadas por um responsável.</p>
@@ -15,8 +14,7 @@ const areasPadrão = [
 
     {
         id: 2,
-        titulo: "Regras da Quadra",
-        conteudo: `
+        regras: `
                 <p> Uso somente mediante reserva.</p>
                 <p> Limite máximo de 10 pessoas por horário.</p>
                 <p> Não é permitido consumir alimentos na área de jogo.</p>
@@ -28,8 +26,7 @@ const areasPadrão = [
 
     {
         id: 3,
-        titulo: "Regras do Salão",
-        conteudo: `
+        regras: `
                 <p> Reserva deve ser realizada antecipadamente.</p>
                 <p> O salão deve ser entregue limpo após o uso.</p>
                 <p> Limite máximo de 50 convidados.</p>
@@ -41,8 +38,7 @@ const areasPadrão = [
 
     {
         id: 4,
-        titulo: "Regras do Espaço Gourmet",
-        conteudo: `
+        regras: `
                 <p> Reserva deve ser realizada antecipadamente.</p>
                 <p> O espaço deve ser entregue limpo após o uso.</p>
                 <p> Limite máximo de 20 convidados.</p>

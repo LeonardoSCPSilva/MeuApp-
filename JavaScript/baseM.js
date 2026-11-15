@@ -1,24 +1,23 @@
-//Abrir modal com regras
-    const botoes = document.querySelectorAll(".regra-btn");
-    const modal = document.getElementById("modal");
-    const fechar = document.querySelector(".fechar");
+// Abrir modal com regras
+const modal = document.getElementById("modal");
+const titulo = document.getElementById("tituloModal");
+const conteudo = document.getElementById("conteudoModal");
 
-    const titulo = document.getElementById("tituloModal");
-    const conteudo = document.getElementById("conteudoModal");
+function abrirModalRegras(id) {
 
-    botoes.forEach(botao => {
+        const area = areas.find(area => area.id == id);
+        console.log("Área selecionada:", area);
+        if (!area) return;
 
-        botao.addEventListener("click", () => {
+        titulo.textContent = `Regras - ${area.nome}`;
+        conteudo.innerHTML = area.regras;
 
-            const local = botao.dataset.local;
+        modal.style.display = "flex";
+}
 
-            titulo.textContent = areas[local].nome;
-            conteudo.innerHTML = areas[local].conteudo;
+const fechar = document.querySelector(".fechar");
 
-            modal.style.display = "flex";
-        });
 
-    });
 
 //Fechar modal com as regras
     fechar.addEventListener("click", () => {
