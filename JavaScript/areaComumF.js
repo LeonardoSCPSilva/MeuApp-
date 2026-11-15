@@ -19,7 +19,7 @@ function carregarAreas(listaa = areas) {
     <div class="dados-area">
         <div><strong>Id:</strong> ${areas.id}</div>
         <div><strong>Nome:</strong> ${areas.nome}</div>
-        <div><strong>Regras:</strong> ${areas.conteudo}</div>
+        <div><strong>Regras:</strong> ${areas.regras}</div>
 
         <div>
             <strong>Horário de abertura:</strong>
@@ -66,7 +66,7 @@ function buscarAreas() {
 
     const filtrados = areas.filter(area =>
         area.nome.toLowerCase().includes(texto) ||
-        area.conteudo.includes(texto)
+        area.id.toString().includes(texto)
     );
 
     carregarAreas(filtrados);
