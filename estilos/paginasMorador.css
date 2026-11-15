@@ -37,6 +37,7 @@
     border:1px solid #ddd;
     display:flex;
     align-items:center;
+    flex-wrap: wrap;
 }
 
 .itemB h3{
@@ -67,6 +68,7 @@
     box-shadow:0 4px 10px rgba(0,0,0,.1);
     width: 400px;
     padding: 10px;
+    margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
 }

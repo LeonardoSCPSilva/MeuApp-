@@ -100,6 +100,33 @@ if(reservas.length === 0){
     listasReservas.innerHTML = cards;
 }
 
+const reservar = document.getElementById("Reservar");
+const areasDisponiveis = JSON.parse(localStorage.getItem("areas")) || [];
+console.log("Áreas disponíveis:", areasDisponiveis);
+
+if(areasDisponiveis.length === 0){
+    reservar.innerHTML = `
+        <div class="itemB">
+            <p>Não há áreas disponíveis para reserva.</p>
+        </div>
+    `;
+} else{
+    let cards = "";
+    areasDisponiveis.forEach(area => {
+        cards += `
+            <div class="cardA">
+                <img src="${obterImagemArea(area)}" alt="${area.nome}">
+                <p>${area.nome}</p>
+                <div class="acoes">
+                    <button class="reserva-btn" onclick="abrirReserva('${area.id}')">Reservar</button>
+                    <button class="regra-btn" data-local="${area.id}">Regras</button>
+                    <button class="dispo-btn">Disponibilidade</button>
+                </div>
+            </div>
+        `;
+    });
+    reservar.innerHTML = cards;
+}
 
 //Ao clicar no botão reservar abrir a pagina reservar.html
 

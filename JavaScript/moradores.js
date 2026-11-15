@@ -1,4 +1,4 @@
-function carregarMoradores(lista = moradores){
+function carregarMoradores(lista = moradores) {
 
     const area = document.getElementById("listaMoradores");
 
@@ -7,33 +7,34 @@ function carregarMoradores(lista = moradores){
     lista.forEach(morador => {
 
         area.innerHTML += `
-            <div class="lista">
+    <div class="lista">
+        <div><strong>Nome:</strong> ${morador.nome}</div>
+        <div><strong>CPF:</strong> ${morador.cpf || "-"}</div>
 
-                <h3>Nome:</h3>
-                <p>${morador.nome}</p>
+        <div><strong>Bloco:</strong> ${morador.bloco || "-"}</div>
+        <div><strong>Apartamento:</strong> ${morador.apartamento || "-"}</div>
 
-                <h3>Apartamento:</h3>
-                <p>${morador.apartamento}</p>
+        <div><strong>Telefone:</strong> ${morador.telefone || "-"}</div>
+        <div><strong>Data de Nascimento:</strong> ${morador.dataNascimento || "-"}</div>
 
-                <h3>Telefone:</h3>
-                <p>${morador.telefone}</p>
+        <div><strong>Email:</strong> ${morador.email || "-"}</div>
+        <div><strong>Data de Cadastro:</strong> ${morador.dataCadastro || "-"}</div>
 
-                <div class="acoes">
-                    <button
-                        class="abrir"
-                        onclick="editarMorador(${morador.id})">
-                        Editar
-                    </button>
+        <div class="acoes">
+            <button
+                class="abrir"
+                onclick="editarMorador(${morador.id})">
+                Editar
+            </button>
 
-                    <button
-                        class="cancelar"
-                        onclick="excluirMorador(${morador.id})">
-                        Excluir
-                    </button>
-                </div>
-
-            </div>
-        `;
+            <button
+                class="cancelar"
+                onclick="excluirMorador(${morador.id})">
+                Excluir
+            </button>
+        </div>
+    </div>
+`;
     });
 
     document.getElementById("totalMoradores").textContent = moradores.length;
@@ -42,7 +43,7 @@ function carregarMoradores(lista = moradores){
 
 carregarMoradores();
 
-function buscarMoradores(){
+function buscarMoradores() {
 
     const texto = document
         .getElementById("buscarMorador")
@@ -57,7 +58,7 @@ function buscarMoradores(){
     carregarMoradores(filtrados);
 }
 
-function excluirMorador(id){
+function excluirMorador(id) {
 
     const indice = moradores.findIndex(
         morador => morador.id === id
@@ -73,7 +74,7 @@ function excluirMorador(id){
     carregarMoradores();
 }
 
-function excluirMorador(id){
+function excluirMorador(id) {
 
     const indice = moradores.findIndex(
         morador => morador.id === id
@@ -89,7 +90,7 @@ function excluirMorador(id){
     carregarMoradores();
 }
 
-function editarMorador(id){
+function editarMorador(id) {
 
     const morador = moradores.find(
         morador => morador.id === id
@@ -99,10 +100,15 @@ function editarMorador(id){
         "Novo nome:",
         morador.nome
     );
+    const novoTelefone = prompt(
+        "Novo telefone:",
+        morador.telefone
+    );
 
-    if(novoNome){
+    if (novoNome) {
 
         morador.nome = novoNome;
+        morador.telefone = novoTelefone;
 
         localStorage.setItem(
             "moradores",
