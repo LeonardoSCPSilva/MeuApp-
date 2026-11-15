@@ -11,6 +11,7 @@ menuMorador = `<div class="logo">
                 <a href="areaComum.html">Reservas</a>
                 <a href="boletos.html">Boletos</a>
                 <a href="enquentes.html">Enquetes</a>
+                <a href="#">Encomendas</a>
                 <a href="perfil.html">Perfil</a>
                 
             </nav>
@@ -23,8 +24,9 @@ menuFuncionario = `<div class="logo">
                 <a href="DashboardFuncionario.html">Dashboard</a>
                 <a href="Moradores.html">Moradores</a>
                 <a href="areasComum.html">Áreas Comuns</a>
-                <a href="boletos.html">Boletos</a>
-                <a href="enquentes.html">Enquetes</a>
+                <a href="#">Boletos</a>
+                <a href="#">Enquetes</a>
+                <a href="#">Encomendas</a>
                 <a href="perfil.html">Perfil</a>
                 
             </nav>

@@ -5,6 +5,7 @@ formCadastroMorador.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const dadosFormulario = new FormData(formCadastroMorador);
+    
     const novoMorador = {
         id: moradores.reduce((maiorId, morador) => Math.max(maiorId, morador.id), 0) + 1,
         nome: dadosFormulario.get("nome").trim(),

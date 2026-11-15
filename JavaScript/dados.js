@@ -69,15 +69,15 @@ function obterImagemArea(area) {
 const moradoresPadrao = [
     {
         id: 1,
-        nome: "teste",
+        nome: "Morador",
         apartamento: "101",
-        telefone: "(11) 99999-1111"
-    },
-    {
-        id: 2,
-        nome: "teste",
-        apartamento: "101",
-        telefone: "(11) 99999-1111"
+        telefone: "(11) 99999-99999",
+        cpf: "000.000.000-00",
+        email: "teste@teste.com",
+        senha: "123456",
+        dataNascimento: "2000-01-01",
+        dataCadastro: "2026-01-01",
+        bloco: "A"
     }
 
 ];
