@@ -50,3 +50,7 @@ function abriComunicado(id){
 
 }
 
+const reservasDash = JSON.parse(localStorage.getItem("reservas")) || [];
+var totalReservas = reservasDash.length;
+document.getElementById("reservasDash").textContent = totalReservas;
+

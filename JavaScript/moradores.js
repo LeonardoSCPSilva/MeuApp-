@@ -4,8 +4,19 @@ function carregarMoradores(lista = moradores) {
 
     area.innerHTML = "";
 
-    lista.forEach(morador => {
 
+    lista.forEach(morador => {
+        let dataForm = morador.dataCadastro;
+        let dataNasc = morador.dataNascimento;
+
+        if (dataForm.includes("-")) {
+            const [ano, mes, dia] = dataForm.split("-");
+            dataForm = `${dia}/${mes}/${ano}`;
+        }
+        if (dataNasc.includes("-")) {
+            const [ano, mes, dia] = dataNasc.split("-");
+            dataNasc = `${dia}/${mes}/${ano}`;
+        }
         area.innerHTML += `
     <div class="lista">
         <div><strong>Nome:</strong> ${morador.nome}</div>
@@ -15,10 +26,10 @@ function carregarMoradores(lista = moradores) {
         <div><strong>Apartamento:</strong> ${morador.apartamento || "-"}</div>
 
         <div><strong>Telefone:</strong> ${morador.telefone || "-"}</div>
-        <div><strong>Data de Nascimento:</strong> ${morador.dataNascimento || "-"}</div>
+        <div><strong>Data de Nascimento:</strong> ${dataNasc || "-"}</div>
 
         <div><strong>Email:</strong> ${morador.email || "-"}</div>
-        <div><strong>Data de Cadastro:</strong> ${morador.dataCadastro || "-"}</div>
+        <div><strong>Data de Cadastro:</strong> ${dataForm || "-"}</div>
 
         <div class="acoes">
             <button
