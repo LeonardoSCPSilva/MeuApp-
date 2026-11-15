@@ -27,7 +27,7 @@ menuFuncionario = `<div class="logo">
                 <a href="#">Boletos</a>
                 <a href="#">Enquetes</a>
                 <a href="#">Encomendas</a>
-                <a href="perfil.html">Perfil</a>
+                <a href="#">Perfil</a>
                 
             </nav>
             <a href="../login.html" id="sair"><img src="../imagens/sair.png" alt=""><h5>Sair</h5></a>`;
