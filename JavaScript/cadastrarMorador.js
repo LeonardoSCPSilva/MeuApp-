@@ -13,7 +13,7 @@ formCadastroMorador.addEventListener("submit", (event) => {
         email: dadosFormulario.get("email").trim(),
         telefone: dadosFormulario.get("telefone").trim(),
         dataNascimento: dadosFormulario.get("dataNascimento").trim(),
-        dataCadastro: new Date().toISOString(),
+        dataCadastro: new Date().toISOString().split("T")[0],
         bloco: dadosFormulario.get("bloco").trim(),
         apartamento: dadosFormulario.get("apartamento").trim()
     };
